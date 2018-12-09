@@ -4,6 +4,8 @@ import 'package:penmark/ui/main.dart';
 
 void main() => runApp(UIApp());
 
+/// Sample Application
+/// from https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

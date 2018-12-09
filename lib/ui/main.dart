@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Sample UI Application
+/// from: https://flutter.io/docs/development/ui/layout
+///
 class UIApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
