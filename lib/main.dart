@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:penmark/ui/main.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(UIApp());
 
 class MyApp extends StatelessWidget {
   @override
