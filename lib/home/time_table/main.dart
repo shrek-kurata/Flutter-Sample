@@ -21,7 +21,9 @@ class TimeTable extends StatelessWidget{
                 },
               ),
             ),
-            data: new ThemeData.dark(),
+            data: ThemeData(
+              primaryColor: Colors.deepPurple
+            ),
           ),
           bottom: TabBar(
             tabs: [
@@ -32,7 +34,23 @@ class TimeTable extends StatelessWidget{
         ),
         body: TabBarView(
           children: [
-            Text("cf"),
+            Table(
+              border: TableBorder.all(),
+              children: [
+                TableRow(children: [
+                  Text("ab"), Text("cd"),
+                ]),
+                TableRow(children: [
+                  Text("ab"), Text("cd"),
+                ]),
+                TableRow(children: [
+                  Text("ab"), Text("cd")
+                ]),
+                TableRow(children: [
+                  Text("ab"), Text("cd")
+                ]),
+              ],
+            ),
             Text("vge")
           ]),
       ),
