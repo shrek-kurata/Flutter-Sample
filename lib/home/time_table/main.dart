@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calendar/flutter_calendar.dart';
+import 'package:penmark/home/time_table/cell.dart';
 
 class TimeTable extends StatelessWidget{
   @override
@@ -38,7 +40,14 @@ class TimeTable extends StatelessWidget{
               border: TableBorder.all(),
               children: [
                 TableRow(children: [
-                  Text("ab"), Text("cd"),
+                  Card(
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Cell()));
+                      },
+                      child: Text("数学"),
+                    )
+                  ), Text("cd"),
                 ]),
                 TableRow(children: [
                   Text("ab"), Text("cd"),
@@ -51,7 +60,9 @@ class TimeTable extends StatelessWidget{
                 ]),
               ],
             ),
-            Text("vge")
+            Calendar(
+              isExpandable: true,
+            )
           ]),
       ),
     );
