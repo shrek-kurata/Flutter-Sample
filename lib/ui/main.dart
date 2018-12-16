@@ -66,7 +66,7 @@ class UIApp extends StatelessWidget {
 
     Widget buttonSection = Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           buildButtonColumn(Icons.call, 'CALL'),
           buildButtonColumn(Icons.near_me, 'ROUTE'),
@@ -100,7 +100,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
                 "images/lake.jpg",
                 width: 600,
                 height: 240,
-                fit: BoxFit.cover
+                fit: BoxFit.cover,
               ),
               titleSection,
               buttonSection,
