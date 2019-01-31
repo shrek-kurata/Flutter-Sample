@@ -1,7 +1,9 @@
+import 'package:meta/meta.dart';
+
 class User{
   UserId id;
 
-  User({this.id});
+  User({@required this.id});
 }
 
 class UserId{
