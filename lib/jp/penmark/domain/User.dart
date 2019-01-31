@@ -7,7 +7,7 @@ class User{
 }
 
 class UserId{
-  num value;
+  int value;
 
   UserId(this.value);
 }
