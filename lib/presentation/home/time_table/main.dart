@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar/flutter_calendar.dart';
-import 'package:penmark/home/time_table/cell.dart';
+import 'package:penmark/presentation/home/time_table/cell.dart';
 
 class TimeTable extends StatelessWidget{
   @override

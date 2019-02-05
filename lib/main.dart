@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:penmark/home/main.dart';
-import 'package:penmark/ui/main.dart';
+import 'package:penmark/presentation/home/main.dart';
 
 void main() => runApp(HomeApp());
 

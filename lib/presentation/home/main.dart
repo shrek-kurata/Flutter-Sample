@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:penmark/home/time_table/main.dart';
+import 'package:penmark/presentation/home/time_table/main.dart';
 
 class HomeApp extends StatefulWidget{
   @override
