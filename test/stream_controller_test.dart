@@ -36,21 +36,31 @@ Stream<int> timedCounter(Duration interval, [int maxCount]) {
 }
 
 void main(){
-  test("Stream Controller", ()async{
-    //example from https://www.dartlang.org/articles/libraries/creating-streams#using-a-streamcontroller
-    var counterStream = timedCounter(const Duration(seconds: 1), 15);
-    StreamSubscription<int> subscription;
+  group("Stream Controller", (){
+    test("example", ()async{
+      //example from https://www.dartlang.org/articles/libraries/creating-streams#using-a-streamcontroller
+      var counterStream = timedCounter(const Duration(seconds: 1), 15);
+      StreamSubscription<int> subscription;
 
-    subscription = counterStream.listen((int counter) {
-      print(counter); // Print an integer every second.
-      if (counter == 5) {
-        // After 5 ticks, pause for five seconds, then resume.
-        subscription.pause(Future.delayed(const Duration(seconds: 5)));
-      }
+      subscription = counterStream.listen((int counter) {
+        print(counter); // Print an integer every second.
+        if (counter == 5) {
+          // After 5 ticks, pause for five seconds, then resume.
+          subscription.pause(Future.delayed(const Duration(seconds: 5)));
+        }
+      });
+
+      counterStream.listen(print);
+
+      await subscription.asFuture();
+    }, skip: "This is just an example");
+
+    test("Cold streams don't arrow several subscribes", (){
+      var counterStream = timedCounter(const Duration(seconds: 1), 15);
+      counterStream.listen((_) => _);
+      expect(() => counterStream.listen((_) => _), throwsA(TypeMatcher<Error>()));
     });
-
-    await subscription.asFuture();
-  }, skip: "This is just sample");
+  });
 }
 
 // Bad example of implementing StreamController
