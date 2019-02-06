@@ -33,8 +33,9 @@ class Lecture extends Entity{
     @required this.faculties,
     @required this.keywords,
     this.details
-  }){
+  }): super(){
     _validate();
+
   }
 
   void _validate(){
