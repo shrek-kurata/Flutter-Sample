@@ -2,6 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:penmark/domain/campus.dart';
 import 'package:penmark/domain/date.dart';
 import 'package:penmark/domain/faculty.dart';
+import 'package:penmark/domain/service/AuthService.dart';
 import 'package:penmark/domain/user.dart';
 
 // ユーザ自身を表す
@@ -28,31 +29,17 @@ class Me extends User{
     faculty: faculty
   );
 
-  void updateBirthday(Date update){
-    this.birthDay = update;
+  void updateBirthday(Date update) => this.birthDay = update;
+  void updateCampus(Campus update) => this.campus = update;
+  void updateName(String update) => this.name = name;
+  void updateIconURL(String update) => this.iconURL = update;
+  void updateSex(Sex update) => this.sex = update;
+  void updateGrade(Grade update) => this.grade = update;
+  void updateFaculty(Faculty update) => this.faculty = update;
+
+  Future sendVerifyMail({@required AuthService from,@required String to}){
+    return from.sendVerifyMail(to: to);
   }
 
-  void updateCampus(Campus update){
-    this.campus = update;
-  }
 
-  void updateName(String update){
-    this.name = name;
-  }
-
-  void updateIconURL(String update){
-    this.iconURL = update;
-  }
-
-  void updateSex(Sex update){
-    this.sex = update;
-  }
-
-  void updateGrade(Grade update){
-    this.grade = update;
-  }
-
-  void updateFaculty(Faculty update){
-    this.faculty = update;
-  }
 }
