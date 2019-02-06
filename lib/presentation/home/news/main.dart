@@ -23,4 +23,7 @@ class NewsAppPageState extends State<NewsAppPage> {
       backgroundColor: Colors.white,
     );
   }
+
+
+
 }
