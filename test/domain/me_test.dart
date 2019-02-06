@@ -4,9 +4,11 @@ import 'package:penmark/domain/repository/NewsRepository.dart';
 import 'package:test/test.dart';
 import 'package:rxdart/rxdart.dart';
 
+import 'repository/InMemoryMeRepository.dart';
+
 void main() {
   test('Me Repo', ()async{
-   final repo = MeRepository();
+   final repo = InMemoryMeRepository();
    final me = await repo.fromAuth();
    me.updateFaculty(Faculty.Bun);
    await repo.save(me);
