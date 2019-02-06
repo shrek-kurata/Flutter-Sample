@@ -5,7 +5,10 @@ class DayAndPeriod{
   final Day day;
   final PeriodTime periodTime;
 
-  const DayAndPeriod({@required this.day, @required this.periodTime});
+  const DayAndPeriod({
+    @required this.day,
+    @required this.periodTime
+  });
 }
 
 enum Day{

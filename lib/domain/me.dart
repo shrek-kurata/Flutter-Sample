@@ -55,7 +55,8 @@ class Me extends User{
     return service.logout();
   }
 
-
+  // 不変性を保証する
+  List<MeLecture> get lectures => List.unmodifiable(_lectures);
 
   Future addLecture(MeLecture lecture)async{
     _lectures.add(lecture);

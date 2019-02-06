@@ -27,7 +27,7 @@ void main() {
       final me = sampleMe();
       me.addLecture(MeLecture(lecture: sampleLecture2(), color: Color(114514)));
 
-
+      expect(me.lectures.length, 2);
     });
   });
 }
