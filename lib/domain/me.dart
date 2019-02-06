@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:meta/meta.dart';
@@ -13,6 +14,8 @@ import 'package:penmark/domain/user.dart';
 // モバイルアプリ特有のmodel
 class Me extends User{
 
+  StreamController<List<Lecture>> _lectures;
+
   Me({
     @required UserId id,
     @required Date birthDay,
@@ -21,7 +24,8 @@ class Me extends User{
     @required String iconURL,
     @required Sex sex,
     @required Grade grade,
-    @required Faculty faculty
+    @required Faculty faculty,
+    @required StreamController<List<Lecture>> lectures
   }): super(
     id: id,
     birthDay: birthDay,
@@ -31,7 +35,9 @@ class Me extends User{
     sex: sex,
     grade: grade,
     faculty: faculty
-  );
+  ){
+    _lectures = lectures;
+  }
 
   void updateBirthday(Date update) => this.birthDay = update;
   void updateCampus(Campus update) => this.campus = update;
@@ -41,13 +47,13 @@ class Me extends User{
   void updateGrade(Grade update) => this.grade = update;
   void updateFaculty(Faculty update) => this.faculty = update;
 
-  Future sendVerifyMail({@required AuthService service,@required String to}){
+  Future<void> sendVerifyMail({@required AuthService service,@required String to}){
     return service.sendVerifyMail(to: to);
   }
 
-  Stream<List<Lecture>> get lectures => Stream.empty();
-  Stream<List<Lecture>> get cancellations => Stream.empty();
-  logout() => Stream.empty();
+  Future<void> logout({@required AuthService service}){
+    return service.logout();
+  }
 
   Future addLecture(LectureId id, Color color)async{
     //TODO

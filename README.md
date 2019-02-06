@@ -20,6 +20,10 @@ Penmarkメンバー用のサンプルアプリ
 ## Nullの明示について
 @nullableを自作したけどどうかな?
 
+## Futureの型づけについて
+`Future<void>`ではなく、`Future`と書くと`Future<dynamic>`となってしまう。  
+厳格な型づけをする為、`Future<void>`と書こう。
+
 # DDDのメモ
 - Aggregate下のEntityは、Aggregate rootを経由してのみ取得可能. 境界線をしっかり引く！
 
