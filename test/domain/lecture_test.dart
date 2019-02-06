@@ -20,13 +20,15 @@ void main(){
       expect(id1 == id3, true);
     });
 
+    //遅延評価に対するテスト
     test("Delayed modifies", () async {
       final lecture = sampleLecture;
       final cancel = await lecture.cancellations;
-    }, skip: "TODO: implement get deplayed cancellations from abstract service");
+
+      expect(cancel.indexWhere((modify) => modify.description == "学会"), isNot(-1));
+    });
   });
 
   group("Lecture Repo", (){
-
   });
 }

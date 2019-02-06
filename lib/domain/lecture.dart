@@ -40,7 +40,7 @@ class Lecture extends Entity{
     @required this.keywords,
     @required this.cancellations,
     @required this.supplements,
-    this.details
+    @nullable this.details
   }): super(){
     _validate();
 

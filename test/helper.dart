@@ -1,4 +1,5 @@
 import 'package:penmark/domain/campus.dart';
+import 'package:penmark/domain/date.dart';
 import 'package:penmark/domain/dayAndPeriod.dart';
 import 'package:penmark/domain/degreeProgram.dart';
 import 'package:penmark/domain/faculty.dart';
@@ -15,4 +16,12 @@ final sampleLecture = Lecture(
   teachers: ["ogiwara"],
   at: [DayAndPeriod(day: Day.Thursday, periodTime: PeriodTime.Four)],
   faculties: [Faculty.Ri],
-  keywords: [Title("さんすう")]);
+  keywords: [Title("さんすう")],
+  cancellations: Future.value([
+    LectureModify(
+      description: "学会",
+      date: Date(year: 2019, month: 5, day: 30),
+      dayAndPeriod: DayAndPeriod(day: Day.Thursday, periodTime: PeriodTime.Four))
+  ]),
+  supplements: Future.value([])
+);
