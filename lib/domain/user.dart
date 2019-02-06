@@ -34,6 +34,7 @@ class User extends Entity{
   }
 }
 
+@immutable
 class UserId{
   final String value;
 
@@ -44,6 +45,7 @@ enum Sex{
   Unknown, Male, Female, NotApplicable
 }
 
+@immutable
 class Grade{
   final DegreeProgram degreeProgram;
   final num year;

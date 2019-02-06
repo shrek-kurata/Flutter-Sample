@@ -1,5 +1,6 @@
 import 'package:meta/meta.dart';
 
+@immutable
 class Date{
   final num year;
   final num month;

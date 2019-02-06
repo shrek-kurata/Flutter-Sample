@@ -1,9 +1,13 @@
+import 'dart:ui';
+
 import 'package:penmark/domain/faculty.dart';
+import 'package:penmark/domain/me.dart';
 import 'package:penmark/domain/repository/MeRepository.dart';
 import 'package:penmark/domain/repository/NewsRepository.dart';
 import 'package:test/test.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../helper.dart';
 import 'repository/InMemoryMeRepository.dart';
 
 void main() {
@@ -20,6 +24,9 @@ void main() {
   });
   group("Me entity", (){
     test("lectures", () async {
+      final me = sampleMe();
+      me.addLecture(MeLecture(lecture: sampleLecture2(), color: Color(114514)));
+
 
     });
   });

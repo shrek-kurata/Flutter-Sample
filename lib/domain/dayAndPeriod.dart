@@ -1,5 +1,6 @@
 import 'package:meta/meta.dart';
 
+@immutable
 class DayAndPeriod{
   final Day day;
   final PeriodTime periodTime;

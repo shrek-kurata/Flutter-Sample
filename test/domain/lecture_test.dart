@@ -22,7 +22,7 @@ void main(){
 
     //遅延評価に対するテスト
     test("Delayed modifies", () async {
-      final lecture = sampleLecture;
+      final lecture = sampleLecture();
       final cancel = await lecture.cancellations;
 
       expect(cancel.indexWhere((modify) => modify.description == "学会"), isNot(-1));

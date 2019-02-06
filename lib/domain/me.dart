@@ -14,7 +14,7 @@ import 'package:penmark/domain/user.dart';
 // モバイルアプリ特有のmodel
 class Me extends User{
 
-  StreamController<List<Lecture>> _lectures;
+  List<MeLecture> _lectures;
 
   Me({
     @required UserId id,
@@ -25,7 +25,7 @@ class Me extends User{
     @required Sex sex,
     @required Grade grade,
     @required Faculty faculty,
-    @required StreamController<List<Lecture>> lectures
+    @required List<MeLecture> lectures
   }): super(
     id: id,
     birthDay: birthDay,
@@ -55,9 +55,19 @@ class Me extends User{
     return service.logout();
   }
 
-  Future addLecture(LectureId id, Color color)async{
-    //TODO
-    return;
+
+
+  Future addLecture(MeLecture lecture)async{
+    _lectures.add(lecture);
   }
 
+}
+
+class MeLecture{
+  final Lecture lecture;
+  final Color color;
+
+  const MeLecture({
+    @required this.lecture,
+    @required this.color});
 }

@@ -23,6 +23,7 @@ class News extends Entity{
   }
 }
 
+@immutable
 class NewsId{
   final String value;
 

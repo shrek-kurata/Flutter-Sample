@@ -54,6 +54,7 @@ class Lecture extends Entity{
   }
 }
 
+@immutable
 class LectureDetail{
   final String title;
   final String content;
@@ -61,6 +62,7 @@ class LectureDetail{
   const LectureDetail({@required this.title, @required this.content});
 }
 
+@immutable
 class LectureModify{
   final String description;
   final Date date;
@@ -72,6 +74,7 @@ class LectureModify{
     @required this.dayAndPeriod});
 }
 
+@immutable
 class LectureId{
   final String value;
 
@@ -90,6 +93,7 @@ class LectureId{
   int get hashCode => this.value.hashCode;
 }
 
+@immutable
 class Title{
   final String value;
 

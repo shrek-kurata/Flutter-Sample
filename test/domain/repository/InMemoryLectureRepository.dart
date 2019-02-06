@@ -5,7 +5,7 @@ import '../../helper.dart';
 
 class InMemoryLectureRepository extends LectureRepository{
 
-  final sample = [ sampleLecture ];
+  final sample = [ sampleLecture() ];
   @override
   Future<Lecture> findByID(LectureId id)async{
     return sample.firstWhere((e) => e.id == id);
