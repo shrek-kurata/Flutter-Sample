@@ -7,6 +7,8 @@ Penmarkメンバー用のサンプルアプリ
 2. flutter doctorで、必要なパッケージ群を確認
 3. 実行
 
+Firebaseの設定ファイル入れる必要あるよ
+
 # ある程度簡単なCoding規約
 - Swiftと同じようなselectorを用意する
 - 型付けを必ず
