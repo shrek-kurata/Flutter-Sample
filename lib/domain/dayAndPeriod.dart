@@ -1,5 +1,10 @@
-class DayAndPeriod{
+import 'package:meta/meta.dart';
 
+class DayAndPeriod{
+  final Day day;
+  final PeriodTime periodTime;
+
+  const DayAndPeriod({@required this.day, @required this.periodTime});
 }
 
 enum Day{
@@ -9,5 +14,9 @@ enum Day{
   Wednesday,
   Thursday,
   Friday,
-Saturday = '土'
+  Saturday
+}
+
+enum PeriodTime{
+  One, Two, Three, Four, Five, Six, Seven
 }

@@ -3,10 +3,10 @@ import 'package:test/test.dart';
 
 void main(){
   test('Lecture Id', (){
-    final a = "aha";
-    final id1 = LectureId(value: a);
-    final id2 = LectureId(value: a);
-    final id3 = LectureId(value: "aha");
+    const a = "aha";
+    const id1 = LectureId(a);
+    const id2 = LectureId(a);
+    const id3 = LectureId("aha");
 
     expect(a == "aha", true);
     expect(id1 == id2, true);
