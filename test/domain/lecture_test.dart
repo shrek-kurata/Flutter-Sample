@@ -18,5 +18,5 @@ void main(){
   test("Delayed modifies", () async {
     final lecture = sampleLecture;
     final cancel = await lecture.cancellations;
-  });
+  }, skip: "TODO: implement get deplayed cancellations from abstract service");
 }

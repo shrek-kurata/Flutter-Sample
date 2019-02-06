@@ -28,7 +28,7 @@ class User extends Entity{
    _validate();
   }
 
-  _validate(){
+  void _validate(){
   }
 }
 

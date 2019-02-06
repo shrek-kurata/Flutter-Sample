@@ -1,7 +1,34 @@
+import 'package:meta/meta.dart';
+import 'package:penmark/domain/campus.dart';
+import 'package:penmark/domain/date.dart';
+import 'package:penmark/domain/faculty.dart';
 import 'package:penmark/domain/user.dart';
 
 // ユーザ自身を表す
 // モバイルアプリ特有のmodel
 class Me extends User{
 
+  Me({
+    @required UserId id,
+    @required Date birthDay,
+    @required Campus campus,
+    @required String name,
+    @required String iconURL,
+    @required Sex sex,
+    @required Grade grade,
+    @required Faculty faculty
+  }): super(
+    id: id,
+    birthDay: birthDay,
+    campus: campus,
+    name: name,
+    iconURL: iconURL,
+    sex: sex,
+    grade: grade,
+    faculty: faculty
+  );
+
+  void changeFaculty(Faculty update){
+    this.faculty = update;
+  }
 }
