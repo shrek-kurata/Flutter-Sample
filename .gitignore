@@ -73,3 +73,4 @@ build/
 
 # Firebase config file
 **/ios/Runner/GoogleService-Info.plist
+**/android/app/google-services.json
