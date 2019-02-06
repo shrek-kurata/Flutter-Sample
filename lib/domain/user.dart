@@ -5,6 +5,8 @@ import 'package:penmark/domain/degreeProgram.dart';
 import 'package:penmark/domain/entity.dart';
 import 'package:penmark/domain/faculty.dart';
 
+// ユーザーを表す
+// クライアントは Me オブジェクト
 class User extends Entity{
   UserId id;
   Date birthDay;

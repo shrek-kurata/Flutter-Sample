@@ -10,6 +10,10 @@ void main(){
     const id2 = LectureId(a);
     const id3 = LectureId("aha");
 
+    //const valueなので、全く同じインスタンスになる
+    expect(identical(id1, id2), true);
+    expect(identical(id1, id3), true);
+
     expect(a == "aha", true);
     expect(id1 == id2, true);
     expect(id1 == id3, true);

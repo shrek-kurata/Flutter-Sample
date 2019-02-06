@@ -28,7 +28,31 @@ class Me extends User{
     faculty: faculty
   );
 
-  void changeFaculty(Faculty update){
+  void updateBirthday(Date update){
+    this.birthDay = update;
+  }
+
+  void updateCampus(Campus update){
+    this.campus = update;
+  }
+
+  void updateName(String update){
+    this.name = name;
+  }
+
+  void updateIconURL(String update){
+    this.iconURL = update;
+  }
+
+  void updateSex(Sex update){
+    this.sex = update;
+  }
+
+  void updateGrade(Grade update){
+    this.grade = update;
+  }
+
+  void updateFaculty(Faculty update){
     this.faculty = update;
   }
 }

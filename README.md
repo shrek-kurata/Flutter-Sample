@@ -12,4 +12,5 @@ Penmarkメンバー用のサンプルアプリ
 - 型付けを必ず
 - Value Objectは不変性を保証する為、constで
 - enumは貧弱だけど、とりあえず公式のに大人しく従う(enumの適切な表現はpresentation層、infra層で行う)
-- NUllの取り扱いに注意。nullはassertではチェックしてないので(@nonnullとか使う…?)
+- Nullの取り扱いに注意。nullはassertではチェックしてないので(@nonnullとか使う…?)
+- property を private setter にしたいけど、いい方法ないかな…
