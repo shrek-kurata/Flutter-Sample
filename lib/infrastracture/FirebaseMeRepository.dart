@@ -18,7 +18,7 @@ class FirebaseMeRepository extends MeRepository{
   Future<Me> fromAuth()async{
     final user  = await auth.currentUser();
     final snap = await db.collection("user").document(user.uid).get();
-
+    snap.data;
   }
 
   @override
