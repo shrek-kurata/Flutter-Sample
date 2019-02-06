@@ -22,3 +22,11 @@ Penmarkメンバー用のサンプルアプリ
 
 # DDDのメモ
 - Aggregate下のEntityは、Aggregate rootを経由してのみ取得可能. 境界線をしっかり引く！
+
+# Diff between dart:async <--> RxDart
+- dart:async's stream is cold(single-subscription) in default.
+- Single in RxDart <--> Future in dart:async
+- Streams in Dart do not close by default when an error occurs. In Rx, an Error causes the Observable to terminate unless it is intercepted by an operator.
+- Dart streams are asynchronous by default, whereas Observables are synchronous by default, unless you schedule work on a different Scheduler
+
+see [here](https://pub.dartlang.org/documentation/rxdart/latest/rx/Observable-class.html) for any details.
