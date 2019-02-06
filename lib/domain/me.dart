@@ -1,7 +1,11 @@
+import 'dart:ui';
+
 import 'package:meta/meta.dart';
 import 'package:penmark/domain/campus.dart';
 import 'package:penmark/domain/date.dart';
 import 'package:penmark/domain/faculty.dart';
+import 'package:penmark/domain/lecture.dart';
+import 'package:penmark/domain/semester.dart';
 import 'package:penmark/domain/service/AuthService.dart';
 import 'package:penmark/domain/user.dart';
 
@@ -37,9 +41,17 @@ class Me extends User{
   void updateGrade(Grade update) => this.grade = update;
   void updateFaculty(Faculty update) => this.faculty = update;
 
-  Future sendVerifyMail({@required AuthService from,@required String to}){
-    return from.sendVerifyMail(to: to);
+  Future sendVerifyMail({@required AuthService service,@required String to}){
+    return service.sendVerifyMail(to: to);
   }
 
+  Stream<List<Lecture>> get lectures => Stream.empty();
+  Stream<List<Lecture>> get cancellations => Stream.empty();
+  logout() => Stream.empty();
+
+  Future addLecture(LectureId id, Color color)async{
+    //TODO
+    return;
+  }
 
 }

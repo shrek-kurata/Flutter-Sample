@@ -15,3 +15,10 @@ Penmarkメンバー用のサンプルアプリ
 - Nullの取り扱いに注意。nullはassertではチェックしてないので(@nonnullとか使う…?)
 - property を private setter にしたいけど、いい方法ないかな…
 - Repository, Service等、Context上明示的なものでも、Domain Entityの引数に渡す(Me#sendVerifyMail(from:to:) を参考に)
+
+# 案
+## Nullの明示について
+@nullableを自作したけどどうかな?
+
+# DDDのメモ
+- Aggregate下のEntityは、Aggregate rootを経由してのみ取得可能. 境界線をしっかり引く！

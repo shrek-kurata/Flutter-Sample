@@ -6,6 +6,7 @@ import 'package:penmark/domain/degreeProgram.dart';
 import 'package:penmark/domain/entity.dart';
 import 'package:penmark/domain/faculty.dart';
 import 'package:penmark/domain/semester.dart';
+import 'package:penmark/helper.dart';
 import 'package:quiver/core.dart';
 
 class Lecture extends Entity{
@@ -19,7 +20,12 @@ class Lecture extends Entity{
   List<DayAndPeriod> at;
   List<Faculty> faculties;
   List<Title> keywords;
+
+  @nullable
   List<LectureDetail> details;
+
+  Future<List<LectureModify>> cancellations;
+  Future<List<LectureModify>> supplements;
 
   Lecture({
     @required this.id,
@@ -32,6 +38,8 @@ class Lecture extends Entity{
     @required this.at,
     @required this.faculties,
     @required this.keywords,
+    @required this.cancellations,
+    @required this.supplements,
     this.details
   }): super(){
     _validate();
@@ -44,10 +52,6 @@ class Lecture extends Entity{
     assert(faculties.length > 0);
     assert(keywords.length > 0);
   }
-
-  //パフォーマンスの都合上、遅延評価に
-  Future<LectureModify> get cancellations => Future.error("");
-  Future<LectureModify> get supplements => Future.error("");
 }
 
 class LectureDetail{
