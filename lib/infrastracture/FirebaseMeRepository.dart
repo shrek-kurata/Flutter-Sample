@@ -6,11 +6,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 final auth = FirebaseAuth.instance;
 final db = Firestore.instance;
 
+// Type checkだけできりゃひとまずいいかな…
 class FirebaseMeRepository extends MeRepository{
 
   //Just for Test
   login()async{
-    await auth.signInWithEmailAndPassword(email: "oiwara@keio.jp", password: "ThisIsPassword");
+    await auth.signInWithEmailAndPassword(email: "ogiwara@keio.jp", password: "ThisIsPassword");
   }
 
   @override
