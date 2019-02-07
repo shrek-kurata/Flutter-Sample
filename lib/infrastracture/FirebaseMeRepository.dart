@@ -25,6 +25,8 @@ class FirebaseMeRepository extends MeRepository{
     final collection = await db.collection("user").document(_user.uid).collection("lectures").getDocuments();
     final meLectures = collection.documents.map((snap) => snap.data).map((map) => MeLectureTranslator().fromPersistence(map));
 
+    //TODO Apply lecture detail stream
+
     Me.fromUser(user, meLectures);
   }
 

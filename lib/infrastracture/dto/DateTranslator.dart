@@ -11,6 +11,14 @@ class DateTranslator{
     );
   }
 
+  Date fromPersistence2(Map<String, dynamic> map){
+    return Date(
+      year: int.parse(map["year"]),
+      month: int.parse(map["month"]),
+      day: int.parse(map["day"])
+    );
+  }
+
   String toPersistence(Date date){
     return "${date.year}-${date.month}-${date.day}";
   }
