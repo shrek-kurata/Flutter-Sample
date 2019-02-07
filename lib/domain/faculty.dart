@@ -10,6 +10,22 @@ enum Faculty{
 
   //SFC
   KanKyo,
+  SoGo
+}
+
+// 全部の学部、研究室
+enum AllFaculty{
+  Kei,
+  Bun,
+  Shou,
+  Hou,
+  I,
+  Ri,
+  Kan,
+  Yaku,
+
+  //SFC
+  KanKyo,
   SoGo,
 
   BunKen,
@@ -20,7 +36,7 @@ enum Faculty{
   RiKen,
   KeiKan,
   HouMu,
-  KenMa ,
+  KenMa,
   YakuKen,
   BetuKa,
   KokuSe,
@@ -34,6 +50,6 @@ enum Faculty{
   FukuSe,
   MeKo,
   KG,
-  HoSe,
+  HoSe ,
   TaiKen
 }

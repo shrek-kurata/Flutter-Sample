@@ -18,7 +18,7 @@ class Lecture extends Entity{
   num year;
   List<String> teachers;
   List<DayAndPeriod> at;
-  List<Faculty> faculties;
+  List<AllFaculty> faculties;
   List<Title> keywords;
 
   @nullable
