@@ -2,6 +2,7 @@ import 'package:penmark/domain/me.dart';
 import 'package:penmark/domain/repository/MeRepository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:penmark/infrastracture/dto/MeLectureTranslator.dart';
 import 'package:penmark/infrastracture/dto/UserTranslator.dart';
 
 final auth = FirebaseAuth.instance;
@@ -17,11 +18,14 @@ class FirebaseMeRepository extends MeRepository{
 
   @override
   Future<Me> fromAuth()async{
-    final user  = await auth.currentUser();
-    final snap = await db.collection("user").document(user.uid).get();
+    final _user  = await auth.currentUser();
+    final snap = await db.collection("user").document(_user.uid).get();
     final dto = UserTranslator();
+    final user = dto.fromPersistence(snap.data);
+    final collection = await db.collection("user").document(_user.uid).collection("lectures").getDocuments();
+    final meLectures = collection.documents.map((snap) => snap.data).map((map) => MeLectureTranslator().fromPersistence(map));
 
-    snap.data;
+    Me.fromUser(user, meLectures);
   }
 
   @override
