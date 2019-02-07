@@ -14,6 +14,7 @@ enum Faculty{
 }
 
 // 全部の学部、研究室
+// 設計ミスです…
 enum AllFaculty{
   Kei,
   Bun,
