@@ -5,16 +5,16 @@ import 'package:penmark/presentation/bloc_sample/counter_bloc.dart';
 import 'package:penmark/presentation/bloc_sample/counter_page.dart';
 
 
+void counter() {
+  BlocSupervisor().delegate = SimpleBlocDelegate();
+  runApp(App());
+}
+
 class SimpleBlocDelegate extends BlocDelegate {
   @override
   void onTransition(Transition transition) {
     print(transition);
   }
-}
-
-void counter() {
-  BlocSupervisor().delegate = SimpleBlocDelegate();
-  runApp(App());
 }
 
 class App extends StatefulWidget {

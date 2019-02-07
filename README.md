@@ -36,3 +36,19 @@ Firebaseの設定ファイル入れる必要あるよ
 - Dart streams are asynchronous by default, whereas Observables are synchronous by default, unless you schedule work on a different Scheduler
 
 see [here](https://pub.dartlang.org/documentation/rxdart/latest/rx/Observable-class.html) for any details.
+
+# Flutterの細かい仕様について
+
+## Laying out (layoutingじゃないよ！)
+laying outのための用語をしっかり認識しよう!
+Day of Flutterとか見とくといいかも…
+
+## Performance
+flutterでのWidgetは大きく分けて、4つある。
+
+- StatelessWidget
+- StatefullWidget
+- InheritedWidget
+- RenderObjectWidget
+
+それぞれの違いをちゃんと把握して、ハイパフォーマンスなアプリを作ろう!
