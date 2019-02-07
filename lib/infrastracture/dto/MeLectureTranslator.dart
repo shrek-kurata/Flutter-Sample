@@ -1,0 +1,9 @@
+class MeLectureTranslator{
+  fromPersistence(){
+
+  }
+
+  toPersistence(){
+
+  }
+}
