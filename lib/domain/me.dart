@@ -16,6 +16,18 @@ class Me extends User{
 
   List<MeLecture> _lectures;
 
+  Me.fromUser(User user, List<MeLecture> lectures): this(
+    id: user.id,
+    birthDay: user.birthDay,
+    campus: user.campus,
+    name: user.name,
+    iconURL: user.iconURL,
+    sex: user.sex,
+    grade: user.grade,
+    faculty: user.faculty,
+    lectures: lectures
+  );
+
   Me({
     @required UserId id,
     @required Date birthDay,
