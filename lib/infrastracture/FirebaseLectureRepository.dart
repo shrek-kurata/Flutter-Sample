@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:penmark/domain/lecture.dart';
 import 'package:penmark/domain/repository/LectureRepository.dart';
+import 'package:penmark/infrastracture/dto/LectureModifyTranslator.dart';
+import 'package:penmark/infrastracture/dto/LectureTranslator.dart';
 
 final db = Firestore.instance;
 
@@ -8,25 +10,24 @@ class FirebaseLectureRepository implements LectureRepository{
   @override
   Future<List<LectureModify>> cancellations(LectureId id)async {
     final collection = await db.collection("lectures").document(id.value).collection("cancellations").getDocuments();
-    collection.documents.map((snap) => snap.data);
+    return collection.documents.map((snap) =>  LectureModifyTranslator().fromPersistence(snap.data));
   }
 
   @override
-  Future<List<LectureModify>> supplements(LectureId id) {
-    // TODO: implement supplements
-    return null;
+  Future<List<LectureModify>> supplements(LectureId id)async{
+    final collection = await db.collection("lectures").document(id.value).collection("supplements").getDocuments();
+    return collection.documents.map((snap) =>  LectureModifyTranslator().fromPersistence(snap.data));
   }
 
 
   @override
-  Future<Lecture> findByID(LectureId id) {
-    // TODO: implement findByID
-    return null;
+  Future<Lecture> findByID(LectureId id)async{
+    final result = await db.collection("lectures").where("id", isEqualTo: id.value).getDocuments();
+    return LectureTranslator().fromPersistence(result.documents.first.data);
   }
 
   @override
   Future<List<Lecture>> search(String query) {
-    // TODO: implement search
-    return null;
+    //Call Cloud functions
   }
 }

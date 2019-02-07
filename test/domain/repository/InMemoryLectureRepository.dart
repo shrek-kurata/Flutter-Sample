@@ -15,4 +15,14 @@ class InMemoryLectureRepository extends LectureRepository{
   Future<List<Lecture>> search(String query)async{
     return sample;
   }
+
+  @override
+  Future<List<LectureModify>> cancellations(LectureId id)async{
+    return [sampleLectureModify()];
+  }
+
+  @override
+  Future<List<LectureModify>> supplements(LectureId id)async{
+    return [];
+  }
 }

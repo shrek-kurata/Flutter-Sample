@@ -11,6 +11,13 @@ import 'package:penmark/domain/me.dart';
 import 'package:penmark/domain/semester.dart';
 import 'package:penmark/domain/user.dart';
 
+final sampleLectureModify = () => LectureModify(
+  description: "学会",
+  date: Date(year: 2019, month: 5, day: 30),
+  dayAndPeriod: DayAndPeriod(day: Day.Thursday, periodTime: PeriodTime.Four));
+
+
+
 final sampleLecture = () => Lecture(
   id: LectureId("学士~さんすう~春学期~日吉~2019~ogiwara~木4"),
   title: Title("さんすう"),
@@ -23,13 +30,12 @@ final sampleLecture = () => Lecture(
   faculties: [AllFaculty.Ri],
   keywords: [Title("さんすう")],
   cancellations: Future.value([
-    LectureModify(
-      description: "学会",
-      date: Date(year: 2019, month: 5, day: 30),
-      dayAndPeriod: DayAndPeriod(day: Day.Thursday, periodTime: PeriodTime.Four))
+    sampleLectureModify()
   ]),
   supplements: Future.value([])
 );
+
+
 
 final sampleLecture2 = () => Lecture(
   id: LectureId("学士~こくご~春学期~日吉~2019~ogiwara~木4"),
@@ -46,6 +52,7 @@ final sampleLecture2 = () => Lecture(
   supplements: Future.value([])
 );
 
+
 final sampleMe = () => Me(
   id:  UserId("cibcdisndfsi"),
   birthDay: Date(year: 1999, month: 5, day: 30),
@@ -60,3 +67,4 @@ final sampleMe = () => Me(
     color: Color(114514)
   ) ]
 );
+
