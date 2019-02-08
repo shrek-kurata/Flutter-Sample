@@ -51,5 +51,8 @@ flutterでのWidgetは大きく分けて、4つある。
 - InheritedWidget
 - RenderObjectWidget
 
-それぞれの違いをちゃんと把握して、ハイパフォーマンスなアプリを作ろう!
-[InheritedWidgetについて](https://qiita.com/ko2ic/items/d7b744f19f213ef1e647)
+それぞれの違いをちゃんと把握して、ハイパフォーマンスなアプリを作ろう!  
+- [InheritedWidgetについて](https://qiita.com/ko2ic/items/d7b744f19f213ef1e647)  
+- [BuildContextについて](https://qiita.com/ko2ic/items/f7bf98b4a30049027470)
+- [Widget, Element, RenderObjectについて](https://medium.com/flutter-jp/dive-into-flutter-4add38741d07)
+- [必読！パフォーマンス改善の為に理解すべきこと](https://medium.com/flutter-jp/state-performance-7a5f67d62edd)
