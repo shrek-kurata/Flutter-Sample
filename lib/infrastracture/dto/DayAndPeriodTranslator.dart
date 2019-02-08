@@ -5,13 +5,13 @@ import 'package:penmark/infrastracture/dto/PeriodTimeTranslator.dart';
 class DayAndPeriodTranslator{
   DayAndPeriod fromPersistence(Map<String, dynamic> map){
     return DayAndPeriod(
-      day: DayTranslator().fromPersistence(map["day"]), 
-      periodTime: PeriodTimeTranslator().fromPersistence(map["periodTime"])
+      day: DayTranslator().fromPersistence(map["day"] as String),
+      periodTime: PeriodTimeTranslator().fromPersistence(map["periodTime"] as num)
     );
   }
 
   Map<String, dynamic> toPersistence(DayAndPeriod obj){
-    return {
+    return <String, dynamic>{
       "day": DayTranslator().toPersistence(obj.day),
       "periodTime": PeriodTimeTranslator().toPersistence(obj.periodTime)
     };

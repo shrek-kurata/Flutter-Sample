@@ -2,7 +2,7 @@ import 'package:penmark/domain/faculty.dart';
 
 class AllFacultyTranslator{
 
-  final map = [
+  final  map = [
     [AllFaculty.Kei, "経"],
     [AllFaculty.Bun, "文"],
     [AllFaculty.Shou, "商"],
@@ -43,12 +43,12 @@ class AllFacultyTranslator{
   AllFaculty fromPersistence(String str){
     final index = map.indexWhere((e) => e[1] == str);
     assert(index != -1);
-    return map[index][0];
+    return map[index][0] as AllFaculty;
   }
 
   String toPersistence(AllFaculty faculty){
     final index = map.indexWhere((e) => e[0] == faculty);
     assert(index != -1);
-    return map[index][1];
+    return map[index][1] as String;
   }
 }

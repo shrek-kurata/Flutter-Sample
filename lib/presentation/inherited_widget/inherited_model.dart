@@ -30,7 +30,7 @@ class TopPage extends StatelessWidget {
   }
 }
 
-class _MyInheritedWidget extends InheritedModel {
+class _MyInheritedWidget extends InheritedModel<HomePageState>{
   _MyInheritedWidget({
     Key key,
     @required Widget child,

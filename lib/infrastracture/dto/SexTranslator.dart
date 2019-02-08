@@ -11,12 +11,12 @@ class SexTranslator{
   Sex fromPersistence(num num){
     final index = map.indexWhere((e) => e[1] == num);
     assert(index != -1);
-    return map[index][0];
+    return map[index][0] as Sex;
   }
 
   num toPersistence(Sex sex){
     final index = map.indexWhere((e) => e[0] == sex);
     assert(index != -1);
-    return map[index][1];
+    return map[index][1] as num;
   }
 }

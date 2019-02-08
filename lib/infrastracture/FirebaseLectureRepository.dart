@@ -10,13 +10,13 @@ class FirebaseLectureRepository implements LectureRepository{
   @override
   Future<List<LectureModify>> cancellations(LectureId id)async {
     final collection = await db.collection("lectures").document(id.value).collection("cancellations").getDocuments();
-    return collection.documents.map((snap) =>  LectureModifyTranslator().fromPersistence(snap.data));
+    return List.from(collection.documents.map<LectureModify>((snap) =>  LectureModifyTranslator().fromPersistence(snap.data)));
   }
 
   @override
   Future<List<LectureModify>> supplements(LectureId id)async{
     final collection = await db.collection("lectures").document(id.value).collection("supplements").getDocuments();
-    return collection.documents.map((snap) =>  LectureModifyTranslator().fromPersistence(snap.data));
+    return List.from(collection.documents.map<LectureModify>((snap) =>  LectureModifyTranslator().fromPersistence(snap.data)));
   }
 
 

@@ -6,7 +6,7 @@ Stream<int> timedCounter(Duration interval, [int maxCount]) {
   Timer timer;
   int counter = 0;
 
-  void tick(_) {
+  void tick(Timer _) {
     counter++;
     controller.add(counter); // Ask stream to send counter values as event.
     if (counter == maxCount) {
@@ -46,13 +46,13 @@ void main(){
         print(counter); // Print an integer every second.
         if (counter == 5) {
           // After 5 ticks, pause for five seconds, then resume.
-          subscription.pause(Future.delayed(const Duration(seconds: 5)));
+          subscription.pause(Future<Duration>.delayed(const Duration(seconds: 5)));
         }
       });
 
       counterStream.listen(print);
 
-      await subscription.asFuture();
+      await subscription.asFuture<int>();
     }, skip: "This is just an example");
 
     test("Cold streams don't arrow several subscribes", (){

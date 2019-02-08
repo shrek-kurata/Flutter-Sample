@@ -10,18 +10,18 @@ class UserTranslator{
     assert(json.containsKey("id")); //Firestoreには保存されてないので、渡してあげる必要がある
 
     return User(
-      id: UserId(json["id"]),
-      birthDay: DateTranslator().fromPersistence(json["birthDay"]),
-      campus: CampusTranslator().fromPersistence(json["campus"]),
-      name: json["name"],
-      iconURL: json["icon"],
-      sex: SexTranslator().fromPersistence(json["sex"]),
-      grade: GradeTranslator().fromPersistence(json["grade"]),
-      faculty: FacultyTranslator().fromPersistence(json["faculty"]));
+      id: UserId(json["id"] as String),
+      birthDay: DateTranslator().fromPersistence(json["birthDay"] as String),
+      campus: CampusTranslator().fromPersistence(json["campus"] as String),
+      name: json["name"] as String,
+      iconURL: json["icon"] as String,
+      sex: SexTranslator().fromPersistence(json["sex"] as num),
+      grade: GradeTranslator().fromPersistence(json["grade"] as Map<String, dynamic>),
+      faculty: FacultyTranslator().fromPersistence(json["faculty"] as String));
   }
 
   Map<String, dynamic> toPersistence(User user){
-    return {
+    return <String, dynamic>{
       "birthDay": DateTranslator().toPersistence(user.birthDay),
       "campus": CampusTranslator().toPersistence(user.campus),
       "name": user.name,

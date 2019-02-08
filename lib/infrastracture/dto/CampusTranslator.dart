@@ -14,12 +14,12 @@ class CampusTranslator{
   Campus fromPersistence(String str){
     final index = map.indexWhere((e) => e[1] == str);
     assert(index != -1);
-    return map[index][0];
+    return map[index][0] as Campus;
   }
 
   String toPersistence(Campus campus){
     final index = map.indexWhere((e) => e[0] == campus);
     assert(index != -1);
-    return map[index][1];
+    return map[index][1] as String;
   }
 }

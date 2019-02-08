@@ -14,12 +14,12 @@ class PeriodTimeTranslator{
   PeriodTime fromPersistence(num num){
     final index = map.indexWhere((e) => e[1] == num);
     assert(index != -1);
-    return map[index][0];
+    return map[index][0] as PeriodTime;
   }
 
   num toPersistence(PeriodTime period){
     final index = map.indexWhere((e) => e[0] == period);
     assert(index != -1);
-    return map[index][1];
+    return map[index][1] as num;
   }
 }

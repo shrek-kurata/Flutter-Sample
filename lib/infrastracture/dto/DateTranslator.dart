@@ -13,9 +13,9 @@ class DateTranslator{
 
   Date fromPersistence2(Map<String, dynamic> map){
     return Date(
-      year: int.parse(map["year"]),
-      month: int.parse(map["month"]),
-      day: int.parse(map["day"])
+      year: map["year"] as num,
+      month: map["month"] as num,
+      day: map["day"] as num
     );
   }
 

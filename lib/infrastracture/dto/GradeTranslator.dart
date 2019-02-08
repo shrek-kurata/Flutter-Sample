@@ -4,13 +4,13 @@ import 'package:penmark/infrastracture/dto/DegreeProgramTranslator.dart';
 class GradeTranslator{
   Grade fromPersistence(Map<String, dynamic> map){
     return Grade(
-      degreeProgram: DegreeProgramTranslator().fromPersistence(map["degreeProgram"]),
-      year: int.parse(map["year"])
+      degreeProgram: DegreeProgramTranslator().fromPersistence(map["degreeProgram"] as String),
+      year: map["year"] as num
     );
   }
 
   Map<String, dynamic> toPersistence(Grade grade){
-    return {
+    return <String, dynamic>{
       "degreeProgram": DegreeProgramTranslator().toPersistence(grade.degreeProgram),
       "year": grade.year
     };

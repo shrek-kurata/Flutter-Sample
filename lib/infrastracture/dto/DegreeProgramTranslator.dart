@@ -10,12 +10,12 @@ class DegreeProgramTranslator{
   DegreeProgram fromPersistence(String str){
     final index = map.indexWhere((e) => e[1] == str);
     assert(index != -1);
-    return map[index][0];
+    return map[index][0] as DegreeProgram;
   }
 
   String toPersistence(DegreeProgram degreeProgram){
     final index = map.indexWhere((e) => e[0] == degreeProgram);
     assert(index != -1);
-    return map[index][1];
+    return map[index][1] as String;
   }
 }

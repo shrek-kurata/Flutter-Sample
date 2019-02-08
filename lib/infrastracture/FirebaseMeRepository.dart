@@ -12,7 +12,7 @@ final db = Firestore.instance;
 class FirebaseMeRepository extends MeRepository{
 
   //Just for Test
-  login()async{
+  Future<void> login()async{
     await auth.signInWithEmailAndPassword(email: "ogiwara@keio.jp", password: "ThisIsPassword");
   }
 
@@ -27,7 +27,7 @@ class FirebaseMeRepository extends MeRepository{
 
     //TODO Apply lecture detail stream
 
-    Me.fromUser(user, meLectures);
+    Me.fromUser(user, List.from(meLectures));
   }
 
   @override

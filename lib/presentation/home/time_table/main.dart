@@ -43,7 +43,7 @@ class TimeTable extends StatelessWidget{
                   Card(
                     child: InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Cell()));
+                        Navigator.push(context, MaterialPageRoute<Cell>(builder: (context) => Cell()));
                       },
                       child: Text("数学"),
                     )

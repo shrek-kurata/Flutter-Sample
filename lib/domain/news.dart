@@ -18,7 +18,7 @@ class News extends Entity{
     _validate();
   }
 
-  _validate(){
+  void _validate(){
 
   }
 }
