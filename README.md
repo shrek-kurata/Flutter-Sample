@@ -21,6 +21,7 @@ Firebaseの設定ファイル入れる必要あるよ
 # 案
 ## Nullの明示について
 @nullableを自作したけどどうかな?
+-> Dart linterを使おう！[(ここ)](https://www.dartlang.org/guides/language/analysis-options)
 
 ## Futureの型づけについて
 `Future<void>`ではなく、`Future`と書くと`Future<dynamic>`となってしまう。  
@@ -56,3 +57,5 @@ flutterでのWidgetは大きく分けて、4つある。
 - [BuildContextについて](https://qiita.com/ko2ic/items/f7bf98b4a30049027470)
 - [Widget, Element, RenderObjectについて](https://medium.com/flutter-jp/dive-into-flutter-4add38741d07)
 - [必読！パフォーマンス改善の為に理解すべきこと](https://medium.com/flutter-jp/state-performance-7a5f67d62edd)
+
+BLoCを使うにせよ、scoped_modelを使うにせよ、これらの理解は欠かせない…
