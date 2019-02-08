@@ -6,7 +6,6 @@ import 'package:penmark/domain/campus.dart';
 import 'package:penmark/domain/date.dart';
 import 'package:penmark/domain/faculty.dart';
 import 'package:penmark/domain/lecture.dart';
-import 'package:penmark/domain/semester.dart';
 import 'package:penmark/domain/service/AuthService.dart';
 import 'package:penmark/domain/user.dart';
 

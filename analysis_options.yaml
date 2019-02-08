@@ -1,4 +1,8 @@
+include: package:pedantic/analysis_options.yaml
+
 analyzer:
+  errors:
+    missing_required_param: error
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false

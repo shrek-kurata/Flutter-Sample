@@ -28,6 +28,6 @@ class FirebaseLectureRepository implements LectureRepository{
 
   @override
   Future<List<Lecture>> search(String query) {
-    //Call Cloud functions
+    return null;
   }
 }

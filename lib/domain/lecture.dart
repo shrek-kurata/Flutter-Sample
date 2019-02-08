@@ -7,7 +7,6 @@ import 'package:penmark/domain/entity.dart';
 import 'package:penmark/domain/faculty.dart';
 import 'package:penmark/domain/semester.dart';
 import 'package:penmark/helper.dart';
-import 'package:quiver/core.dart';
 
 class Lecture extends Entity{
   LectureId id;
@@ -47,10 +46,10 @@ class Lecture extends Entity{
   }
 
   void _validate(){
-    assert(teachers.length > 0);
-    assert(at.length > 0);
-    assert(faculties.length > 0);
-    assert(keywords.length > 0);
+    assert(teachers.isNotEmpty);
+    assert(at.isNotEmpty);
+    assert(faculties.isNotEmpty);
+    assert(keywords.isNotEmpty);
   }
 }
 
@@ -82,11 +81,13 @@ class LectureId{
 
   @override
   bool operator ==(Object that) {
+    if(identical(this, that)){
+      return true;
+    }
     if(that is! LectureId){
       return false;
-    }else{
-      return this.value == (that as LectureId).value;
     }
+    return this.value == (that as LectureId).value;
   }
 
   @override

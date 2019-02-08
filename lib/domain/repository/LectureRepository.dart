@@ -1,5 +1,4 @@
 import 'package:penmark/domain/lecture.dart';
-import 'package:tuple/tuple.dart';
 
 abstract class LectureRepository{
   Future<Lecture> findByID(LectureId id);

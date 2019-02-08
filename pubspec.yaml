@@ -35,6 +35,7 @@ dev_dependencies:
   test: ^1.5.1
   flutter_driver:
     sdk: flutter
+  pedantic: ^1.4.0
 
 flutter:
   uses-material-design: true
