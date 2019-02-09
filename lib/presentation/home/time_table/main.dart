@@ -46,26 +46,22 @@ class TimeTable extends StatelessWidget{
         ),
       ),
     body: Table(
-      border: TableBorder.all(),
+      border: TableBorder.all(color: Colors.grey),
       children: [
           TableRow(children: [
-            Card(
-              child: InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute<Cell>(builder: (context) => Cell()));
-                },
-                child: Text("数学"),
-              )
-            ), Text("cd"),
+            Text(""),
+            Text("月"),
+            Text("火"),
           ]),
           TableRow(children: [
-            Text("ab"), Text("cd"),
+            Text("1"),
+            Card(),
+            Card(),
           ]),
           TableRow(children: [
-            Text("ab"), Text("cd")
-          ]),
-          TableRow(children: [
-            Text("ab"), Text("cd")
+            Text("2"),
+            Text(""),
+            Text(""),
           ]),
         ],
       )

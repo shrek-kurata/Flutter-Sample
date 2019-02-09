@@ -27,7 +27,11 @@ class Profile extends StatelessWidget{
           color: Theme.of(context).primaryColor,
           textColor: Colors.white,
           child: Text("編集"),
-          onPressed: () => Scaffold.of(context).showSnackBar(SnackBar(content: Text("W")))
+          onPressed: (){
+            Scaffold.of(context)
+              ..removeCurrentSnackBar()
+              ..showSnackBar(SnackBar(content: Text("W")));
+          }
         )
       ],
     );
