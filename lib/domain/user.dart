@@ -15,7 +15,7 @@ class User extends Entity{
   final String iconURL;
   final Sex sex;
   final Grade grade;
-  final Faculty faculty;
+  Faculty faculty;
 
   User({
     @required this.id,
@@ -35,10 +35,7 @@ class User extends Entity{
       assert(sex != null),
       assert(grade != null),
       assert(faculty != null),
-      super(){
-
-  }
-
+      super();
 }
 
 @immutable

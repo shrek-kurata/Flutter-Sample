@@ -12,7 +12,7 @@ void main() {
     test('saving', ()async{
       final repo = InMemoryMeRepository();
       final me = await repo.fromAuth();
-      me.updateFaculty(Faculty.Bun);
+      me.faculty = Faculty.Bun;
       await repo.save(me);
 
       final me2 = await repo.fromAuth();
@@ -22,7 +22,7 @@ void main() {
   group("Me entity", (){
     test("lectures", () async {
       final me = sampleMe();
-      await me.addLecture(MeLecture(lecture: sampleLecture2(), color: Color(114514)));
+      await me.lectures.add(MeLecture(lecture: sampleLecture2(), color: Color(114514)));
 
       expect(me.lectures.length, 2);
     });
