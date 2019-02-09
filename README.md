@@ -59,3 +59,5 @@ flutterでのWidgetは大きく分けて、4つある。
 - [必読！パフォーマンス改善の為に理解すべきこと](https://medium.com/flutter-jp/state-performance-7a5f67d62edd)
 
 BLoCを使うにせよ、scoped_modelを使うにせよ、これらの理解は欠かせない…
+
+- [Inside Flutterの日本語訳](https://qiita.com/CostlierRain464/items/c7d99b77b77f43537415#準線形レイアウト)
