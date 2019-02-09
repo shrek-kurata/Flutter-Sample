@@ -11,10 +11,10 @@ Firebaseの設定ファイル入れる必要あるよ
 
 # ある程度簡単なCoding規約
 - Swiftと同じようなselectorを用意する
-- 型付けを必ず
-- Value Objectは不変性を保証する為、constで
-- enumは貧弱だけど、とりあえず公式のに大人しく従う(enumの適切な表現はpresentation層、infra層で行う)
-- Nullの取り扱いに注意。nullはassertではチェックしてないので(@nonnullとか使う…?)
+- 型付けを必ず！
+- assertでのきめ細かいチェック
+- Value Objectは不変性を保証する為、constで(Widgetもなるべく)
+- enumは貧弱だけど、公式のに大人しく従う(enumの適切な表現はpresentation層、infra層で行う)
 - property を private setter にしたいけど、いい方法ないかな…
 - Repository, Service等、Context上明示的なものでも、Domain Entityの引数に渡す(Me#sendVerifyMail(from:to:) を参考に)
 
