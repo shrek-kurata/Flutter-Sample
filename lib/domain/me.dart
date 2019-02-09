@@ -13,7 +13,7 @@ import 'package:penmark/domain/user.dart';
 // モバイルアプリ特有のmodel
 class Me extends User{
 
-  List<MeLecture> _lectures;
+  final List<MeLecture> lectures;
 
   Me.fromUser(User user, List<MeLecture> lectures): this(
     id: user.id,
@@ -36,27 +36,19 @@ class Me extends User{
     @required Sex sex,
     @required Grade grade,
     @required Faculty faculty,
-    @required List<MeLecture> lectures
-  }): super(
-    id: id,
-    birthDay: birthDay,
-    campus: campus,
-    name: name,
-    iconURL: iconURL,
-    sex: sex,
-    grade: grade,
-    faculty: faculty
-  ){
-    _lectures = lectures;
-  }
-
-  void updateBirthday(Date update) => this.birthDay = update;
-  void updateCampus(Campus update) => this.campus = update;
-  void updateName(String update) => this.name = name;
-  void updateIconURL(String update) => this.iconURL = update;
-  void updateSex(Sex update) => this.sex = update;
-  void updateGrade(Grade update) => this.grade = update;
-  void updateFaculty(Faculty update) => this.faculty = update;
+    @required this.lectures
+  }):
+      assert(lectures != null),
+      super(
+      id: id,
+      birthDay: birthDay,
+      campus: campus,
+      name: name,
+      iconURL: iconURL,
+      sex: sex,
+      grade: grade,
+      faculty: faculty
+    );
 
   Future<void> sendVerifyMail({@required AuthService service,@required String to}){
     return service.sendVerifyMail(to: to);
@@ -65,14 +57,6 @@ class Me extends User{
   Future<void> logout({@required AuthService service}){
     return service.logout();
   }
-
-  // 不変性を保証する
-  List<MeLecture> get lectures => List.unmodifiable(_lectures);
-
-  Future addLecture(MeLecture lecture)async{
-    _lectures.add(lecture);
-  }
-
 }
 
 class MeLecture{
@@ -81,5 +65,7 @@ class MeLecture{
 
   const MeLecture({
     @required this.lecture,
-    @required this.color});
+    @required this.color}):
+      assert(lecture != null),
+      assert(color != null);
 }

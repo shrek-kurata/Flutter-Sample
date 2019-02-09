@@ -10,7 +10,10 @@ class Date{
   const Date({
     @required this.year,
     @required this.month,
-    @required this.day });
+    @required this.day }):
+      assert(year != null),
+      assert(month != null),
+      assert(day != null);
 
   @override
   bool operator ==(Object other) {

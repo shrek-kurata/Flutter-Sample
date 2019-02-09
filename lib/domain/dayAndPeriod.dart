@@ -8,7 +8,7 @@ class DayAndPeriod{
   const DayAndPeriod({
     @required this.day,
     @required this.periodTime
-  });
+  }):assert(day != null), assert(periodTime != null);
 }
 
 enum Day{

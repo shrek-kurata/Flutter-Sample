@@ -8,14 +8,14 @@ import 'package:penmark/domain/faculty.dart';
 // ユーザーを表す
 // クライアントは Me オブジェクト
 class User extends Entity{
-  UserId id;
-  Date birthDay;
-  Campus campus;
-  String name;
-  String iconURL;
-  Sex sex;
-  Grade grade;
-  Faculty faculty;
+  final UserId id;
+  final Date birthDay;
+  final Campus campus;
+  final String name;
+  final String iconURL;
+  final Sex sex;
+  final Grade grade;
+  final Faculty faculty;
 
   User({
     @required this.id,
@@ -26,19 +26,26 @@ class User extends Entity{
     @required this.sex,
     @required this.grade,
     @required this.faculty
-  }): super(){
-   _validate();
+  }):
+      assert(id != null),
+      assert(birthDay != null),
+      assert(campus != null),
+      assert(name != null),
+      assert(iconURL != null),
+      assert(sex != null),
+      assert(grade != null),
+      assert(faculty != null),
+      super(){
+
   }
 
-  void _validate(){
-  }
 }
 
 @immutable
 class UserId{
   final String value;
 
-  const UserId(this.value);
+  const UserId(this.value): assert(value != null);
 }
 
 enum Sex{
@@ -52,5 +59,7 @@ class Grade{
 
   const Grade({
     @required this.degreeProgram,
-    @required this.year});
+    @required this.year}):
+      assert(degreeProgram != null),
+      assert(year != null);
 }

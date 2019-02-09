@@ -8,7 +8,9 @@ class DateSchedules{
 
   const DateSchedules({
     @required this.date,
-    @required this.items});
+    @required this.items}):
+      assert(date != null),
+      assert(items != null);
 }
 
 @immutable
