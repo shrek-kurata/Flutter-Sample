@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:penmark/presentation/home/schedule/schedule.dart';
 import 'package:penmark/presentation/home/time_table/main.dart';
 
 class HomeApp extends StatefulWidget{
@@ -9,11 +10,11 @@ class HomeApp extends StatefulWidget{
 }
 
 class _HomeState extends State<HomeApp>{
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   final _widgetOptions = [
+    Schedule(),
     TimeTable(),
-    Text("ニュース"),
-    Text("マイページ")
+    Text("ニュース")
   ];
 
   @override
@@ -21,7 +22,7 @@ class _HomeState extends State<HomeApp>{
     return MaterialApp(
       title: "Home",
       theme: ThemeData(
-          primaryColor: Colors.deepPurple
+          primaryColor: Color.fromARGB(255, 71, 64, 89)
       ),
       home: Scaffold(
         body: Center(
@@ -29,9 +30,10 @@ class _HomeState extends State<HomeApp>{
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [
+
+            BottomNavigationBarItem(icon: Icon(Icons.schedule), title: Text("スケジュール")),
             BottomNavigationBarItem(icon: Icon(Icons.calendar_today), title: Text("時間割")),
             BottomNavigationBarItem(icon: Icon(Icons.cast), title: Text("ニュース")),
-            BottomNavigationBarItem(icon: Icon(Icons.perm_identity), title: Text("マイページ")),
           ],
           currentIndex: _selectedIndex,
           onTap: (index){

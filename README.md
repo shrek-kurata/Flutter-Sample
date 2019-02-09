@@ -43,6 +43,7 @@ see [here](https://pub.dartlang.org/documentation/rxdart/latest/rx/Observable-cl
 ## Laying out (layoutingじゃないよ！)
 laying outのための用語をしっかり認識しよう!
 Day of Flutterとか見とくといいかも…
+Constraintは使わない方(Alain, Padding is better)がいいとか
 
 ## Performance
 flutterでのWidgetは大きく分けて、4つある。
