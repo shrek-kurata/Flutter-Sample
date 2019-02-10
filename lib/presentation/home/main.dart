@@ -25,6 +25,13 @@ class HomeApp extends StatelessWidget{
                 ),
               ]
             ),
+            actions: <Widget>[
+              Builder(builder: (context){
+                final index = DefaultTabController.of(context).index;
+                print(index);
+                return index == 1 ? Icon(Icons.grade) : Icon(Icons.title);
+              })
+            ],
           ),
           body: TabBarView(
             children: [
