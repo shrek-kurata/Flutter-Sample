@@ -8,13 +8,8 @@ class Schedule extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-       title: Text("スケジュール"),
-     ),
-     body: Calendar(
-       isExpandable: true,
-     ),
+   return Calendar(
+     isExpandable: true,
    );
   }
 }

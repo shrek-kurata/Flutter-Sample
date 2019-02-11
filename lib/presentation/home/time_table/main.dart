@@ -9,62 +9,57 @@ class TimeTable extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.person_outline),
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute<MyPage>(builder: (context) => MyPage()));
-          }
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute<Cell>(builder: (context) => Cell()));
-            })
-        ],
-        title: new Theme(
-          child: new DropdownButtonHideUnderline(
-            child: new DropdownButton<String>(
-              value: "one",
-              items: <DropdownMenuItem<String>>[
-                new DropdownMenuItem(
-                  child: new Text(''
-                    'My Page',
-                    style: TextStyle(color: Colors.black26),),
-                  value: 'one',
-                ),
-              ],
-              onChanged: (String value) {
-              },
-            ),
-          ),
-          data: ThemeData(
-            primaryColor: Theme.of(context).primaryColor
-          ),
-        ),
-      ),
-    body: Table(
+    return Table(
+      columnWidths: {0: FractionColumnWidth(0.05)},
+
       border: TableBorder.all(color: Colors.grey),
       children: [
-          TableRow(children: [
-            Text(""),
-            Text("月"),
-            Text("火"),
-          ]),
-          TableRow(children: [
-            Text("1"),
-            Card(),
-            Card(),
-          ]),
-          TableRow(children: [
-            Text("2"),
-            Text(""),
-            Text(""),
-          ]),
-        ],
-      )
+        const TableRow(children: [
+          Text(""),
+          Center(
+            heightFactor: 1.3,
+            child: Text("月"),
+          ),
+          Center(
+            heightFactor: 1.3,
+            child: Text("火"),
+          ),Center(
+            heightFactor: 1.3,
+            child: Text("水"),
+          ),Center(
+            heightFactor: 1.3,
+            child: Text("木"),
+          )
+        ]),
+        TableRow(
+          children: [
+            Center(
+              heightFactor: 5,
+              child: Text("1"),
+            ),
+            SizedBox.fromSize(
+              size: Size(double.infinity, 100),
+              child: InkWell(
+                onTap: (){},
+                child: Card(
+                  color: Colors.black12,
+                  margin: EdgeInsets.all(0),
+                  child: Text("WWW"),
+                ),
+              ),
+            ),
+            Card(
+              child: Text("A"),
+            ),
+            Card(
+              child: Text("A"),
+            ),
+            Card(
+              child: Text("A"),
+            ),
+          ]
+        )
+      ],
     );
   }
 }

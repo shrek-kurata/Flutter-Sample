@@ -1,10 +1,8 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
-import 'package:penmark/presentation/bloc_sample/counter.dart';
 import 'package:penmark/presentation/home/main.dart';
-import 'package:penmark/presentation/sliver/main.dart';
 
-void main() => sliver();
+void main() => home();
 
 /// Sample Application
 /// from https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0

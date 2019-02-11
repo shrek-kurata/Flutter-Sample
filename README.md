@@ -28,6 +28,7 @@ Firebaseの設定ファイル入れる必要あるよ
 
 # DDDのメモ
 - Aggregate下のEntityは、Aggregate rootを経由してのみ取得可能. 境界線をしっかり引く！
+- 複雑なモデルを表現するのに、mixinを使って行こう
 
 # Diff between dart:async <--> RxDart
 - dart:async's stream is cold(single-subscription) in default.

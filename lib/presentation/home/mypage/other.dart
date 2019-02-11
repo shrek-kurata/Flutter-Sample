@@ -1,24 +1,35 @@
 import 'package:flutter/material.dart';
 
 class Other extends StatelessWidget{
+
+  const Other();
+
   @override
   Widget build(BuildContext context) {
-    return (
-      ListView(
-        children: <Widget>[
-          ListTile(
-            leading: Text("設定"),
+    return Column(
+      children: <Widget>[
+        const ListTile(
+          leading: const Text("設定"),
+        ),
+        Container(
+          color: Colors.white,
+          child: const ListTile(
+            title: Text("時間割"),
+            trailing: Icon(Icons.keyboard_arrow_right),
           ),
-          Ink(
-            color: Colors.grey,
-            child:  ListTile(
-              title: Text("時間割"),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: (){},
-            ),
-          )
-        ],
-      )
+        ),
+        const Divider(
+          indent: 20,
+          height: 0,
+        ),
+        Container(
+          color: Colors.white,
+          child: const ListTile(
+            title: Text("ニュース"),
+            trailing: Icon(Icons.keyboard_arrow_right),
+          ),
+        )
+      ],
     );
   }
 }

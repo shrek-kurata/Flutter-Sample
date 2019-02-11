@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:penmark/presentation/home/counter.dart';
 import 'package:penmark/presentation/home/mypage/other.dart';
 import 'package:penmark/presentation/home/mypage/profile.dart';
 
 class MyPage extends StatelessWidget{
+
+  const MyPage();
+
   @override
   Widget build(BuildContext context) {
     return (
@@ -12,16 +16,17 @@ class MyPage extends StatelessWidget{
           appBar: AppBar(
             title: Text("マイページ"),
             bottom: TabBar(
+              indicatorColor: Colors.white,
               tabs: [
                 Tab(text: "プロフィール"),
                 Tab(text: "その他")
               ]
             ),
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
-              Profile(),
-              Other()
+              const Profile(),
+              const Other()
             ]
           ),
         ),
