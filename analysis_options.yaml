@@ -3,6 +3,7 @@ include: package:pedantic/analysis_options.yaml
 analyzer:
   errors:
     missing_required_param: error
+    prefer_const_constructors: error
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false

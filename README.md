@@ -14,14 +14,13 @@ Firebaseの設定ファイル入れる必要あるよ
 - 型付けを必ず！
 - assertでのきめ細かいチェック
 - Value Objectは不変性を保証する為、constで(Widgetもなるべく)
-- enumは貧弱だけど、公式のに大人しく従う(enumの適切な表現はpresentation層、infra層で行う)
-- property を private setter にしたいけど、いい方法ないかな…
+- enumは貧弱だけど、公式のに大人しく従う(enumの表現は、presentation層、infra層で分ける)
 - Repository, Service等、Context上明示的なものでも、Domain Entityの引数に渡す(Me#sendVerifyMail(from:to:) を参考に)
 
 # 案
 ## Nullの明示について
-@nullableを自作したけどどうかな?
--> Dart linterを使おう！[(ここ)](https://www.dartlang.org/guides/language/analysis-options)
+基本的にはNonnullで。Nullになりうる部分は`asset`での表記の他、@nullableで明示する。
+-Dart Analysisを使おう！[(ここ)](https://www.dartlang.org/guides/language/analysis-options)
 
 ## Futureの型づけについて
 `Future<void>`ではなく、`Future`と書くと`Future<dynamic>`となってしまう。  
@@ -58,7 +57,14 @@ flutterでのWidgetは大きく分けて、4つある。
 - [BuildContextについて](https://qiita.com/ko2ic/items/f7bf98b4a30049027470)
 - [Widget, Element, RenderObjectについて](https://medium.com/flutter-jp/dive-into-flutter-4add38741d07)
 - [必読！パフォーマンス改善の為に理解すべきこと](https://medium.com/flutter-jp/state-performance-7a5f67d62edd)
+  - Stateを末端に追いやる
+  - buildメソッドで返すWidgetのネストは極力減らす(RenderObjectWidgetであるRichTextをラップしたTextが参考)
+  - 不変なサブツリーがあればキャッシュしてリビルドごとに再利用する
+  - const キーワードをなるべく使う(const はトップレベルに1つ付ければOK)
+  - Containerなどのconstが使えないWidgetの代わりにconstを使えるWidgetが使えないか検討する
+  - サブツリーの構造を変えるのを避ける
 
 BLoCを使うにせよ、scoped_modelを使うにせよ、これらの理解は欠かせない…
 
-- [Inside Flutterの日本語訳](https://qiita.com/CostlierRain464/items/c7d99b77b77f43537415#準線形レイアウト)
+- [Inside Flutterの日本語訳](https://qiita.com/CostlierRain464/items/c7d99b77b77f43537415)
+

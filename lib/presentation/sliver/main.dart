@@ -11,6 +11,19 @@ class _Sliver extends StatelessWidget{
       home: Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
+            SliverAppBar(
+              expandedHeight: 150.0,
+              flexibleSpace: const FlexibleSpaceBar(
+                title: Text('Available seats'),
+              ),
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.add_circle),
+                  tooltip: 'Add new entry',
+                  onPressed: () { /* ... */ },
+                ),
+              ]
+            ),
             SliverGrid(
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200.0,

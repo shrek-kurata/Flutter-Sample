@@ -18,7 +18,7 @@ class TopPage extends StatelessWidget {
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
+            children:  <Widget>[
               WidgetA(),
               WidgetB(),
               WidgetC(),
@@ -85,6 +85,9 @@ class HomePageState extends State<HomePage> {
 }
 
 class WidgetA extends StatelessWidget {
+
+  const WidgetA();
+
   @override
   Widget build(BuildContext context) {
     final HomePageState state = HomePage.of(context, 'A'); // A文字列なのでリビルドする
@@ -99,6 +102,7 @@ class WidgetA extends StatelessWidget {
 }
 
 class WidgetB extends StatelessWidget {
+  const WidgetB();
   @override
   Widget build(BuildContext context) {
     return Text('I am a widget that will not be rebuilt.');
@@ -106,6 +110,7 @@ class WidgetB extends StatelessWidget {
 }
 
 class WidgetC extends StatelessWidget {
+  const WidgetC();
   @override
   Widget build(BuildContext context) {
     final HomePageState state = HomePage.of(context, 'C');
