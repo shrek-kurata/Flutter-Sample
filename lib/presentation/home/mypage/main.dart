@@ -14,6 +14,7 @@ class MyPage extends StatelessWidget{
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0,
             title: Text("マイページ"),
             bottom: TabBar(
               indicatorColor: Colors.white,

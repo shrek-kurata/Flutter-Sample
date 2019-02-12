@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:penmark/presentation/home/appbar_action/sort_lecture.dart';
 
 class Counter extends StatefulWidget{
 
@@ -24,7 +25,8 @@ class _CounterState extends State<Counter> with AutomaticKeepAliveClientMixin<Co
               _count++;
             });
           }
-        )
+        ),
+        SortLecture()
       ],
     );
   }

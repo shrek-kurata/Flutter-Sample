@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:penmark/presentation/home/appbar_action/add_lecture.dart';
+import 'package:penmark/presentation/home/appbar_action/search_news.dart';
+import 'package:penmark/presentation/home/appbar_action/sort_lecture.dart';
 import 'package:penmark/presentation/home/counter.dart';
+import 'package:penmark/presentation/home/news/main.dart';
 import 'package:penmark/presentation/home/schedule/schedule.dart';
 import 'package:penmark/presentation/home/time_table/main.dart';
-import 'package:penmark/presentation/home/toolbar_action/user_icon.dart';
+import 'package:penmark/presentation/home/appbar_action/user_icon.dart';
 import 'package:penmark/presentation/home/webview.dart';
 import 'package:tuple/tuple.dart';
 
@@ -29,20 +33,22 @@ class Home extends StatefulWidget{
 }
 
 class _BasePageState extends State<Home> {
-  int _index = 0;
+  int _index = 2;
 
-  final _list = const <Tuple2<String, Widget>>[
-    Tuple2<String, Widget>("スケジュール", const Schedule()),
-    Tuple2<String, Widget>("時間割", const TimeTable()),
-    Tuple2<String, Widget>("ニュース", const Counter())
+  final _list = const <Tuple3<String, Widget, List<Widget>>>[
+    Tuple3<String, Widget, List<Widget>>("スケジュール", const Schedule(), []),
+    Tuple3<String, Widget, List<Widget>>("時間割", const TimeTable(), [const SortLecture(), const AddLecture()]),
+    Tuple3<String, Widget, List<Widget>>("ニュース", const NewsTop(), [const SearchNews() ])
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: const UserIcon(),
         title: Text(_list[_index].item1),
+        actions: _list[_index].item3,
       ),
       body: new Stack(
         children: <Widget>[
