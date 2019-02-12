@@ -11,10 +11,19 @@ class Profile extends StatelessWidget{
       padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
-          const Icon(
-            Icons.event,size: 100,
+          SizedBox.fromSize(
+            size: Size.fromHeight(100),
+            child: CircleAvatar(
+              child: FadeInImage.assetNetwork(
+                placeholder: "images/lake.jpg",
+                image: "https://firebasestorage.googleapis.com/v0/b/staging-penmark.appspot.com/o/Aperture_Science_grey.jpg?alt=media&token=cbe20a22-4e7b-4eea-90dd-aa585bcb65a2"
+              ),
+            )
           ),
-          const Text("ogiwara"),
+          const Padding(
+            padding: EdgeInsets.all(5),
+            child: Text("ogiwara", style: TextStyle(fontSize: 20),),
+          ),
           const ListTile(
             leading: Text("性別"),
             title: Text("男"),
