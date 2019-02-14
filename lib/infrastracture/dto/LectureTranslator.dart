@@ -14,13 +14,14 @@ class LectureTranslator{
       campus: CampusTranslator().fromPersistence(map["campus"] as String),
       degreeProgram: DegreeProgramTranslator().fromPersistence(map["degreeProgram"] as String),
       semester: SemesterTranslator().fromPersistence(map["semester"] as String),
-      year: map["year"] as num,
+      year: map["year"] as int,
       teachers: map["teacher"] as List<String>,
-      at: (map["at"] as List<Map<String, dynamic>>).map((e) => DayAndPeriodTranslator().fromPersistence(e)).toList(),
-      faculties: (map["faculties"] as List<String>).map((e) => FacultyTranslator().fromPersistence(e)).toList(),
-      keywords: (map["keywords"] as List<String>).map<Title>((str) => Title(str)).toList(),
+      at: (map["at"] as List<Map<String, dynamic>>).map(DayAndPeriodTranslator().fromPersistence).toList(),
+      faculties: (map["faculties"] as List<String>).map(FacultyTranslator().fromPersistence).toList(),
+      keywords: (map["keywords"] as List<String>).map((e) => Title(e)).toList(),
       details: map.containsKey("details")
-        ? (map["details"] as List<Map<String, String>>).map<LectureDetail>((e) => LectureDetailTranslator().fromPersistence(e)).toList() : null,
+        ? (map["details"] as List<Map<String, dynamic>>).map(LectureDetailTranslator().fromPersistence).toList()
+        : null,
       cancellations: Future.value([]),
       supplements: Future.value([]));
   }
@@ -34,13 +35,13 @@ class LectureTranslator{
       "semester": SemesterTranslator().toPersistence(lecture.semester),
       "year": lecture.year,
       "teacher": lecture.teachers,
-      "at": lecture.at.map((dayAndPeriod) => DayAndPeriodTranslator().toPersistence(dayAndPeriod)),
-      "faculties": lecture.faculties.map((faculty) => FacultyTranslator().toPersistence(faculty)),
+      "at": lecture.at.map(DayAndPeriodTranslator().toPersistence),
+      "faculties": lecture.faculties.map(FacultyTranslator().toPersistence),
       "keywords": lecture.keywords.map((title) => title.value)
     };
 
     if(lecture.details != null){
-      result["details"] = lecture.details.map((detail) => LectureDetailTranslator().toPersistence(detail));
+      result["details"] = lecture.details.map(LectureDetailTranslator().toPersistence);
     }
 
     return result;

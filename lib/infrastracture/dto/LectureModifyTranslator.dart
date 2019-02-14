@@ -8,8 +8,8 @@ class LectureModifyTranslator{
   LectureModify fromPersistence(Map<String, dynamic> map){
     return LectureModify(
       description: map["description"] as String,
-      date:  DateTranslator().fromPersistence2(map["at"]["date"] as Map<String, dynamic>),
-      dayAndPeriod: DayAndPeriodTranslator().fromPersistence(map["at"]["dayAndPeriod"] as Map<String, dynamic>)
+      date:  DateTranslator().fromPersistence(map["date"] as Map<String, dynamic>),
+      dayAndPeriod: DayAndPeriodTranslator().fromPersistence(map["dayAndPeriod"] as Map<String, dynamic>)
     );
   }
 
@@ -17,10 +17,8 @@ class LectureModifyTranslator{
   Map<String, dynamic> toPersistence(LectureModify modify){
     return <String, dynamic>{
       "description": modify.description,
-      "at": {
-        "date": DateTranslator().toPersistence(modify.date),
-        "dayAndPeriod": DayAndPeriodTranslator().toPersistence(modify.dayAndPeriod)
-      }
+      "date": DateTranslator().toPersistence(modify.date),
+      "dayAndPeriod": DayAndPeriodTranslator().toPersistence(modify.dayAndPeriod)
     };
   }
 }

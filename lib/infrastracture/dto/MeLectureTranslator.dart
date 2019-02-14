@@ -25,12 +25,16 @@ class MeLectureTranslator{
 //TODO: wrong
 class ColorTranslator{
   Color fromPersistence(String str){
-    assert(str.startsWith("#"));
+    return _hexToColor(str);
+  }
 
-    return Color(int.parse(str.replaceAll("#", "")));
+  /// from: https://stackoverflow.com/questions/50381968/flutter-dart-convert-hex-color-string-to-color
+  Color _hexToColor(String code) {
+    return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
   }
 
   String toPersistence(Color color){
-    return "#${color.value}";
+    //Ignore alpha value
+    return "#${color.value.toRadixString(16).substring(2,8).toUpperCase()}";
   }
 }

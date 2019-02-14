@@ -6,7 +6,10 @@ class SemesterTranslator{
     [Semester.Fall, "秋学期"],
     [Semester.YearRound, "通年"],
     [Semester.SpringIntensive, "春学期集中"],
-    [Semester.FallIntensive, "秋学期集中"]
+    [Semester.FallIntensive, "秋学期集中"],
+    [Semester.One, "1学期"],
+    [Semester.Two, "2学期"],
+    [Semester.Three, "3学期"]
   ];
 
   Semester fromPersistence(String str){

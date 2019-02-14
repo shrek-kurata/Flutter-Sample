@@ -3,9 +3,9 @@ import 'package:quiver/core.dart';
 
 @immutable
 class Date{
-  final num year;
-  final num month;
-  final num day;
+  final int year;
+  final int month;
+  final int day;
 
   const Date({
     @required this.year,

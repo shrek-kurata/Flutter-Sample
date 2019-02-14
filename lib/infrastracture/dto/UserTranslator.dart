@@ -7,11 +7,9 @@ import 'package:penmark/infrastracture/dto/SexTranslator.dart';
 
 class UserTranslator{
   User fromPersistence(Map<String, dynamic> json){
-    assert(json.containsKey("id")); //Firestoreには保存されてないので、渡してあげる必要がある
-
     return User(
       id: UserId(json["id"] as String),
-      birthDay: DateTranslator().fromPersistence(json["birthDay"] as String),
+      birthDay: DateTranslator().fromPersistence(json["birthDay"] as Map<String, dynamic>),
       campus: CampusTranslator().fromPersistence(json["campus"] as String),
       name: json["name"] as String,
       iconURL: json["icon"] as String,
