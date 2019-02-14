@@ -22,6 +22,7 @@ class MeLectureTranslator{
   }
 }
 
+//TODO: wrong
 class ColorTranslator{
   Color fromPersistence(String str){
     assert(str.startsWith("#"));

@@ -2,17 +2,42 @@ import 'package:penmark/domain/faculty.dart';
 
 class FacultyTranslator{
 
-  final map = [
-    [Faculty.Kei, "経済学部"],
-    [Faculty.Bun, "文学部"],
-    [Faculty.Shou, "商学部"],
-    [Faculty.Hou, "法学部"],
-    [Faculty.I, "医学部"],
-    [Faculty.Ri, "理工学部"],
-    [Faculty.Kan, "看護医療学部"],
-    [Faculty.Yaku, "薬学部"],
-    [Faculty.KanKyo, "環境情報学部"],
-    [Faculty.SoGo, "総合政策学部"],
+  final  map = [
+    [Faculty.Kei, "経"],
+    [Faculty.Bun, "文"],
+    [Faculty.Shou, "商"],
+    [Faculty.Hou, "法"],
+    [Faculty.I, "医"],
+    [Faculty.Ri, "理"],
+    [Faculty.Kan, "看"],
+    [Faculty.Yaku, "薬"],
+    [Faculty.KanKyo, "環境"],
+    [Faculty.SoGo, "総合"],
+
+    [Faculty.BunKen, '文研'],
+    [Faculty.KeiKen, '経研'],
+    [Faculty.HouKen,'法研'],
+    [Faculty.ShaKen,'社研'],
+    [Faculty.ShouKen,'商研'],
+    [Faculty.RiKen,'理研'],
+    [Faculty.KeiKan, '経管'],
+    [Faculty.HouMu,'法務'],
+    [Faculty.KenMa,'健マ'],
+    [Faculty.YakuKen,'薬研'],
+    [Faculty.BetuKa,'別科'],
+    [Faculty.KokuSe,'国セ'],
+    [Faculty.ASe,'アセ'],
+    [Faculty.KyouKen,'教研'],
+    [Faculty.GI,'GI'],
+    [Faculty.GoKen,'言研'],
+    [Faculty.GaiKen,'外研'],
+    [Faculty.ShiDou,'斯道'],
+    [Faculty.GakuSou,'学総'],
+    [Faculty.FukuSe,'福セ'],
+    [Faculty.MeKo,'メコ'],
+    [Faculty.KG,'KG'],
+    [Faculty.HoSe,'保セ'],
+    [Faculty.TaiKen,'体研']
   ];
 
   Faculty fromPersistence(String str){

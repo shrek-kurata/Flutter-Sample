@@ -1,8 +1,8 @@
 import 'package:penmark/domain/lecture.dart';
-import 'package:penmark/infrastracture/dto/AllFacultyTranslator.dart';
 import 'package:penmark/infrastracture/dto/CampusTranslator.dart';
 import 'package:penmark/infrastracture/dto/DayAndPeriodTranslator.dart';
 import 'package:penmark/infrastracture/dto/DegreeProgramTranslator.dart';
+import 'package:penmark/infrastracture/dto/FacultyTranslator.dart';
 import 'package:penmark/infrastracture/dto/LectureDetailTranslator.dart';
 import 'package:penmark/infrastracture/dto/SemesterTranslator.dart';
 
@@ -17,7 +17,7 @@ class LectureTranslator{
       year: map["year"] as num,
       teachers: map["teacher"] as List<String>,
       at: (map["at"] as List<Map<String, dynamic>>).map((e) => DayAndPeriodTranslator().fromPersistence(e)).toList(),
-      faculties: (map["faculties"] as List<String>).map((e) => AllFacultyTranslator().fromPersistence(e)).toList(),
+      faculties: (map["faculties"] as List<String>).map((e) => FacultyTranslator().fromPersistence(e)).toList(),
       keywords: (map["keywords"] as List<String>).map<Title>((str) => Title(str)).toList(),
       details: map.containsKey("details")
         ? (map["details"] as List<Map<String, String>>).map<LectureDetail>((e) => LectureDetailTranslator().fromPersistence(e)).toList() : null,
@@ -35,7 +35,7 @@ class LectureTranslator{
       "year": lecture.year,
       "teacher": lecture.teachers,
       "at": lecture.at.map((dayAndPeriod) => DayAndPeriodTranslator().toPersistence(dayAndPeriod)),
-      "faculties": lecture.faculties.map((faculty) => AllFacultyTranslator().toPersistence(faculty)),
+      "faculties": lecture.faculties.map((faculty) => FacultyTranslator().toPersistence(faculty)),
       "keywords": lecture.keywords.map((title) => title.value)
     };
 

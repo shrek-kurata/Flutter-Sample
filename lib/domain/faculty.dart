@@ -1,21 +1,5 @@
-enum Faculty{
-  Kei,
-  Bun,
-  Shou,
-  Hou,
-  I,
-  Ri,
-  Kan,
-  Yaku,
-
-  //SFC
-  KanKyo,
-  SoGo
-}
-
 // 全部の学部、研究室
-// 設計ミスです…
-enum AllFaculty{
+enum Faculty{
   Kei,
   Bun,
   Shou,

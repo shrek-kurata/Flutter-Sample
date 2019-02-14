@@ -38,16 +38,6 @@ class User extends Entity{
       super();
 }
 
-mixin A{
-  String id;
-}
-
-class B with A{
-  B(){
-    this.id;
-  }
-}
-
 @immutable
 class UserId{
   final String value;

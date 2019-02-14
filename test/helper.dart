@@ -27,7 +27,7 @@ final sampleLecture = () => Lecture(
   year: 2019,
   teachers: ["ogiwara"],
   at: [DayAndPeriod(day: Day.Thursday, periodTime: PeriodTime.Four)],
-  faculties: [AllFaculty.Ri],
+  faculties: [Faculty.Ri],
   keywords: [Title("さんすう")],
   cancellations: Future.value([
     sampleLectureModify()
@@ -46,7 +46,7 @@ final sampleLecture2 = () => Lecture(
   year: 2019,
   teachers: ["ogiwara"],
   at: [DayAndPeriod(day: Day.Thursday, periodTime: PeriodTime.Four)],
-  faculties: [AllFaculty.Bun],
+  faculties: [Faculty.Bun],
   keywords: [Title("こくご")],
   cancellations: Future.value([]),
   supplements: Future.value([])

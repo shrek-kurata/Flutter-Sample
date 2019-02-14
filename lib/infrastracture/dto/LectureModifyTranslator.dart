@@ -3,6 +3,8 @@ import 'package:penmark/infrastracture/dto/DateTranslator.dart';
 import 'package:penmark/infrastracture/dto/DayAndPeriodTranslator.dart';
 
 class LectureModifyTranslator{
+
+  //TODO: wrong
   LectureModify fromPersistence(Map<String, dynamic> map){
     return LectureModify(
       description: map["description"] as String,
@@ -11,6 +13,7 @@ class LectureModifyTranslator{
     );
   }
 
+  //TODO: wrong
   Map<String, dynamic> toPersistence(LectureModify modify){
     return <String, dynamic>{
       "description": modify.description,

@@ -1,5 +1,7 @@
 enum DegreeProgram{
   Undergraduate,
   Master,
-  Doctor
+  Doctor,
+  /// 法務のみ？
+  Expert
 }

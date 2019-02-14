@@ -1,6 +1,8 @@
 import 'package:penmark/domain/date.dart';
 
 class DateTranslator{
+
+  //TODO: wrong
   Date fromPersistence(String str){
     final split = str.split("-");
     assert(split.length == 3);
@@ -19,6 +21,7 @@ class DateTranslator{
     );
   }
 
+  //TODO: wrong
   String toPersistence(Date date){
     return "${date.year}-${date.month}-${date.day}";
   }

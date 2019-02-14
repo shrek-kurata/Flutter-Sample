@@ -23,8 +23,11 @@ void main() {
     test("lectures", () async {
       final me = sampleMe();
       await me.lectures.add(MeLecture(lecture: sampleLecture2(), color: Color(114514)));
+      final repo = InMemoryMeRepository();
+      await repo.save(me);
+      final me2 = await repo.fromAuth();
 
-      expect(me.lectures.length, 2);
+      expect(me2.lectures.length, 2);
     });
   });
 }
